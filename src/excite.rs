@@ -4,7 +4,8 @@ use ndarray::prelude::*;
 pub trait Calibrate {
     fn calibrate(
         spectrum: Spectrum,
-        energy: f64) {
+        energy: f64,
+    ) {
         if energy == approx(1) {
             spectrum
         } else if energy == approx(0) {

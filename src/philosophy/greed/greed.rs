@@ -1,6 +1,7 @@
+use crate::philosophy::Philosophy
+
 //! Greed chooses a random move 
 //! with a fixed `ϵ` probability.
-
 pub struct Greed {
     epsilon: f64
 }

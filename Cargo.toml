@@ -1,10 +1,13 @@
 [package]
 name = "monk"
+description = "Framework for describing RL policies."
+
 version = "0.1.0"
 authors = ["jedhsu@pm.me"]
-description = "Framework for describing RL policies."
 readme = "README.md"
 license = "Apache"
+
+edition = "2018"
 
 [dependencies]
 serde = "1.0"
