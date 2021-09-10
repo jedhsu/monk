@@ -9,6 +9,8 @@ pub trait Ignorance: Demon {
     fn think(&self, world: &Realizing) -> Action;
 }
 
+impl Default for Ignorance {
+}
 
 impl Display for Ignorance {
     // # name(p::MinMaxTS) = "MinMax (depth $(p.depth))"
