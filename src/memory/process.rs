@@ -1,5 +1,5 @@
 pub trait Process {
-    fn process(&&self);
+    fn process(&self);
 }
 
 impl Process for Memory {

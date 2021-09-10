@@ -12,7 +12,7 @@ pub struct Acumen {
 
 pub trait Interpret<P> where P: Realized {
     fn appraise(&self, world: Realizing, discount: f64) -> f64;
-    fn evaluate(&self, state: Realized):
+    fn evaluate(&self, state: Realized);
 }
 
 impl Interpret for Acumen {

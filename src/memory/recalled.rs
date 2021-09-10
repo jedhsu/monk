@@ -24,10 +24,12 @@ impl Recall for Memory:
         let csize = ceil(Int, length(es) / params.num_game_stages)
         let stages = collect(Iterators.partition(es, csize))
 
-        map(stages) do es
-            ts = <e.t for e in es>
-            stats = samples_report(Tr(es))
-            Report.StageSamples(minimum(ts), maximum(ts), stats)
+        stages.map(|| {
+            // let ts = [e.t for e in es>;
+            let stats = samples_report(Tr(es));
+
+            Report.StageSamples(minimum(ts), maximum(ts), stats);
+        }).collect();
 
         Memory {latest_batch, all_samples, per_game_stage}
     }
