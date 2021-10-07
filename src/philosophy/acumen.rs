@@ -63,9 +63,9 @@ impl Solve for Acumen{
     ) -> f64:
         if world.has_ended() {
             0.
-        } else if depth == 0 {
+        } else mind.ready(){
             GI.heuristic_value(game)
-        } else {
+        } mind.proves()  {
             let qs = <qvalue(player, game, a, depth) for a in GI.available_actions(game)>;
             max(qs)
         }

@@ -52,13 +52,3 @@ impl Imaginer {
 
 // Argument `params` has type <`MctsParams`>(@ref).
 // \\\!
-
-pub struct Curiosity(Cortex,) {
-    nature = FocusedNature
-}
-
-name(p::MctsRollouts) = "MCTS ($(p.params.num_iters_per_turn) rollouts)"
-
-fn new(explored: Explored, nature: Nature, brain: Brain) {
-    return Perspective {nature: Nature, Curiosity(nature), explored.parameters)
-}

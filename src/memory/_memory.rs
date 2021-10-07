@@ -18,16 +18,16 @@ pub trait Recall {
 
 
 pub trait Mutate {
-    # last_batch(mem::MemoryBuffer) = mem.buf<end-cur_batch_size(mem)+1:end>
+    last_batch(mem::MemoryBuffer) = mem.buf<end-cur_batch_size(mem)+1:end>
 
-    # cur_batch_size(mem::MemoryBuffer) = min(mem.cur_batch_size, length(mem))
+    cur_batch_size(mem::MemoryBuffer) = min(mem.cur_batch_size, length(mem))
 
-    # new_batch!(mem::MemoryBuffer) = (mem.cur_batch_size = 0)
+    new_batch!(mem::MemoryBuffer) = (mem.cur_batch_size = 0)
 }
 
-# function Base.empty!(mem::MemoryBuffer)
-#   empty!(mem.buf)
-#   mem.cur_batch_size = 0
-# end
+// # function Base.empty!(mem::MemoryBuffer)
+// #   empty!(mem.buf)
+// #   mem.cur_batch_size = 0
+// # end
 
-# Base.length(mem::MemoryBuffer) = length(mem.buf)
+// Base.length(mem::MemoryBuffer) = length(mem.buf)

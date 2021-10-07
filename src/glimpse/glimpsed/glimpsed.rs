@@ -1,9 +1,9 @@
 //! The results of an episode of `Glimpse`.
 
 pub struct Glimpsed {
+    /// Average number of samples generated per second.
+    /// TODO is this infer_frequency?
     glimpsing_frequency: f64,
-    //! Average number of samples generated per second.
-    //! TODO is this infer_frequency?
 
     average_steps_ahead: f64,
     //!
@@ -14,10 +14,10 @@ pub struct Glimpsed {
     //! <`MCTS.approximate_memory_footpri32`>(@ref)
     //! &self-play phase
     
-    number_glimpsed: i32.
-    //! number of samples in the memory buffer at the end of the
+    /// number of samples in the memory buffer at the end of the
+    num_glimpsed: i32.
 
-    unique_number_realized: i32,
-    //! number of unique board positions in the
-    //! memory buffer at the end of the &self-play phase
+    /// number of unique board positions in the
+    /// memory buffer at the end of the &self-play phase
+    num_realized: i32,
 }

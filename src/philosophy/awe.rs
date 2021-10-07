@@ -43,8 +43,9 @@ impl Awe {
             let mcts_params = MonteCarloTreeSearchParameters.guess(environment);
         }
 
-        if not gpu:
-            gpu = GraphicalProcessingUnit.guess(gpu)
+        if not gpu {
+            gpu = GraphicalProcessingUnit.guess(gpu);
+        }
 
         net = Network.copy(
             env.optimalnet,

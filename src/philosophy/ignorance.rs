@@ -21,11 +21,11 @@ impl Ignorance for Demon {
         nature: Nature,
     ) {
         // TODO clean this up from glimpse paramers
-        gamma = 1.0
-        cpuct = 1.0
-        noise_ϵ = 0.0
-        noise_α = 1.0
-        prior_temperature = 1.0
+        gamma = 1.0;
+        cpuct = 1.0;
+        noise_ϵ = 0.0;
+        noise_α = 1.0;
+        prior_temperature = 1.0;
 
         S = Time.state_type(physics)
         tree: dict<S, StateInfo> = dict()

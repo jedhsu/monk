@@ -21,6 +21,7 @@ impl Flow for Glimpsing {
         let fractum = player.glimpsing(game);
         let energy = player, energy(game, turn_number);
         let demon = &self.apply_energy();
+
         actions<Util.rand_categorical(π)>
     }
 
@@ -29,6 +30,7 @@ impl Flow for Glimpsing {
 
         n = length(actions)
         qs = <qvalue(p, game, a, p.depth) for a in actions>
+        
         bright = (q for q in qs if q ==Inf)
 
         if bright:
@@ -48,8 +50,10 @@ impl Flow for Glimpsing {
             let qmax = qs<best>;
             assert!(qmax > -Inf)
             let C = maximum(abs(qs<a>) for a in notlosing) + eps()
+            
             let spectrum = exp.((qs .- qmax) ./ C);
             let spectrum = spectrum ^ (1 / p.τ);
+
         } else {
             let spectrum = zeros(n);
             let spectrum<winning> .= 1.;

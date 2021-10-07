@@ -1,3 +1,5 @@
+/// On-policy variant of Watkins' Q-learning with eligibility traces (aka
+/// "modified Q-learning").
 use crate::{
     domains::Transition, fa::ScaledGradientUpdate, policies::Policy, traces,
     Differentiable, Function, Handler, Parameterised,
@@ -14,14 +16,6 @@ pub struct Response {
     td_error: f64,
 }
 
-/// On-policy variant of Watkins' Q-learning with eligibility traces (aka
-/// "modified Q-learning").
-///
-/// # References
-/// - Rummery, G. A. (1995). Problem Solving with Reinforcement Learning. Ph.D
-/// thesis, Cambridge University.
-/// - Singh, S. P., Sutton, R. S. (1996). Reinforcement learning with replacing
-/// eligibility traces. Machine Learning 22:123–158.
 #[derive(Clone, Debug, Parameterised)]
 #[cfg_attr(
     feature = "serde",

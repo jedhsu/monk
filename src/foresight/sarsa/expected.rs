@@ -1,18 +1,10 @@
+/// Action probability-weighted variant of SARSA (aka "summation Q-learning").
 use crate::{
     domains::Transition, fa::StateActionUpdate, policies::EnumerablePolicy,
     Enumerable, Function, Handler, Parameterised,
 };
 use std::ops::Index;
 
-/// Action probability-weighted variant of SARSA (aka "summation Q-learning").
-///
-/// # References
-/// - Rummery, G. A. (1995). Problem Solving with Reinforcement Learning. Ph.D
-/// thesis, Cambridge University.
-/// - van Seijen, H., van Hasselt, H., Whiteson, S., Wiering, M. (2009). A
-/// theoretical and empirical analysis of Expected Sarsa. In Proceedings of the
-/// IEEE Symposium on Adaptive Dynamic Programming and Reinforcement Learning,
-/// pp. 177–184.
 #[derive(Parameterised)]
 pub struct ExpectedSARSA<Q, P> {
     #[weights]

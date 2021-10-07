@@ -19,10 +19,10 @@ impl Recall for Memory:
 
     fn recalling_stage() {
         let es = &self.recall_experience();
-        sort!(es, by=(e->e.t))
+        let sort!(es, by=(e->e.t));
 
-        let csize = ceil(Int, length(es) / params.num_game_stages)
-        let stages = collect(Iterators.partition(es, csize))
+        let csize = ceil(Int, length(es) / params.num_game_stages);
+        let stages = collect(Iterators.partition(es, csize));
 
         stages.map(|| {
             // let ts = [e.t for e in es>;
@@ -31,6 +31,6 @@ impl Recall for Memory:
             Report.StageSamples(minimum(ts), maximum(ts), stats);
         }).collect();
 
-        Memory {latest_batch, all_samples, per_game_stage}
+        Memory {latest_batch, all_samples, per_game_stage};
     }
 }

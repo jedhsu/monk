@@ -9,6 +9,7 @@ impl Process for Memory {
         let mut n: i32 = len(trace);
         let mut wr: i32 = 0;
 
+        // TODO doesntm ake sense
         for i in 1..n {
             let wr = caution * wr + trace.rewards<i>;
             let places = recall.states<i>;

@@ -6,7 +6,7 @@ use crate::{domains::Batch, fa::StateActionUpdate, policies::Policy, Handler};
     derive(Serialize, Deserialize),
     serde(crate = "serde_crate")
 )]
-pub struct REINFORCE<P> {
+pub struct Reinforce<P> {
     #[weights]
     pub policy: P,
 
@@ -14,13 +14,13 @@ pub struct REINFORCE<P> {
     pub gamma: f64,
 }
 
-impl<P> REINFORCE<P> {
+impl<P> Reinforce<P> {
     pub fn new(
         policy: P,
         alpha: f64,
         gamma: f64,
     ) -> Self {
-        REINFORCE {
+        Reinforce {
             policy,
 
             alpha,
@@ -29,7 +29,7 @@ impl<P> REINFORCE<P> {
     }
 }
 
-impl<'m, S, P> Handler<&'m Batch<S, P::Action>> for REINFORCE<P>
+impl<'m, S, P> Handler<&'m Batch<S, P::Action>> for Reinforce<P>
 where
     P: Policy<S>
         + Handler<StateActionUpdate<&'m S, &'m <P as Policy<S>>::Action>>,

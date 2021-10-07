@@ -1,3 +1,4 @@
+/// On-policy variant of Watkins' Q-learning (aka "modified Q-learning").
 use crate::{
     domains::Transition, fa::StateActionUpdate, policies::Policy, Function,
     Handler, Parameterised,
@@ -10,18 +11,12 @@ use rand::thread_rng;
     derive(Serialize, Deserialize),
     serde(crate = "serde_crate")
 )]
+
 pub struct Response<R> {
     td_error: f64,
     qfunc_response: R,
 }
 
-/// On-policy variant of Watkins' Q-learning (aka "modified Q-learning").
-///
-/// # References
-/// - Rummery, G. A. (1995). Problem Solving with Reinforcement Learning. Ph.D
-/// thesis, Cambridge University.
-/// - Singh, S. P., Sutton, R. S. (1996). Reinforcement learning with replacing
-/// eligibility traces. Machine Learning 22:123–158.
 #[derive(Clone, Debug, Parameterised)]
 #[cfg_attr(
     feature = "serde",

@@ -48,6 +48,7 @@ where
     }
 }
 
+/// Trying to directly jump to SAW.
 impl<S, A, Q> Function<(S, A)> for Greedy<Q>
 where
     A: std::borrow::Borrow<usize>,
